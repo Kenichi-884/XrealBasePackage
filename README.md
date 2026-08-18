@@ -6,4 +6,4 @@ XREAL (Nreal) 向け AR プロジェクトの共通基盤 UPM パッケージ。
 
 - [パッケージ README](XRealBasePackage/Packages/com.xreal.basepackage/README.md)
 
-`XRealBasePackage/` は、このパッケージを Unity Editor で開いてコンパイル・動作確認するための最小構成のテストホストプロジェクト。
+`XRealBasePackage/` は、このパッケージを Unity Editor で開いてコンパイル・動作確認するための最小構成のテストホストプロジェクト。XREAL公式SDK(`com.xreal.xr`, `LocalPackages/`)とXR Plug-in Management設定(`Assets/XR/`)も導入済みなので、新規プロジェクトを実機開発可能な状態にする際のひな形としても使える(詳細はパッケージREADMEの「XREAL実機開発を始めるためのチェックリスト」を参照)。

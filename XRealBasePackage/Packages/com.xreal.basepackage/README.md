@@ -91,7 +91,15 @@ Unity 6000.0 (Unity 6) 以降を想定。
 ## 導入方法
 「リポジトリ構成」節を参照(`path` クエリ付きの git URL で `Packages/manifest.json` に追記する)。特定バージョンを固定したい場合は URL 末尾に `#v0.1.0` のようにタグを追加する。
 
-特定バージョンを固定したい場合は `#v0.1.0` のようにタグを指定する。
+## XREAL実機開発を始めるためのチェックリスト
+このパッケージ(スクリプト一式)はあくまで「土台」であり、これだけでは実機は動かない。新規プロジェクトでXREAL開発に着手する際は以下を揃える。
+
+- ✅ **このパッケージ** (`com.xreal.basepackage`) — シーン進行・オーディオ・演出・インタラクションのロジック一式
+- ⬜ **XREAL公式SDK** (`com.xreal.xr`) — `LocalPackages/com.xreal.xr` としてプロジェクトに配置し、`Packages/manifest.json` に `"com.xreal.xr": "file:../LocalPackages/com.xreal.xr"` を追加。これが無いとXRトラッキング自体が起動しない。テストホストプロジェクト(`XRealBasePackage/`)には導入済みなので、その `LocalPackages/com.xreal.xr` をコピーすれば流用できる。
+- ⬜ **XR Plug-in Management設定** — `Assets/XR/`(Loaders/Settings/XRGeneralSettings.asset等)。テストホストプロジェクトのものをコピーすれば、XREALXRLoader 等の割当済み設定をそのまま流用できる。
+- ⬜ **AR Session / XR Origin / ハンドトラッキングリグ** — シーンへの配置は本パッケージには含まれない(プロジェクトごとのシーン構成に依存するため)。XREAL SDK (`com.xreal.xr`) の Package Manager 上の Samples「AR Features」「Interaction Basics」をインポートして流用するのが早い。
+- ⬜ **マーカー検出を使う場合** — 自前のマーカースポナーに `IMarkerContentSource` を実装し、`XRReferenceImageLibrary` を用意する(下記「使い方の要点」参照)。
+- ⬜ **Dissolve演出を使う場合** — `DissolveEffect` はシェーダー非依存の汎用実装だが、実際の Dissolve シェーダー/マテリアルは含まれない(魚デモでは Amplify Shader Pack の Dissolve Burn を使用。有料アセットのため本パッケージには同梱していない)。対応シェーダーが無い場合は自動で `enabled` 切替にフォールバックする。
 
 ## 使い方の要点
 
