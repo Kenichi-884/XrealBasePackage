@@ -4,7 +4,6 @@
     "references": [
         "Unity.TextMeshPro",
         "Unity.XR.ARFoundation",
-        "Unity.XR.CoreUtils",
         "Unity.XR.Interaction.Toolkit",
         "Unity.XR.Hands",
         "Unity.InputSystem"
