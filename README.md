@@ -3,6 +3,21 @@
 XREAL (Nreal) 向け AR プロジェクトの共通基盤 UPM パッケージ。
 `XrealFishDemoAR` から「マーカー検出→コンテンツ表示→シーン進行→音声/演出」という一連の流れで再利用できる部分を抽出したもの。個別プロジェクト固有のロジック(魚モデルの挙動など)は含まない。
 
+## リポジトリ構成
+
+```
+XrealBasePackage/            # このリポジトリ = UPM パッケージそのもの
+├── package.json
+├── Runtime/
+├── Editor/
+└── XRealBasePackage/        # パッケージ動作確認用の Unity プロジェクト(テストホスト)
+    ├── Assets/
+    ├── Packages/manifest.json   # com.xreal.basepackage を file:../.. でローカル参照
+    └── ProjectSettings/
+```
+
+`XRealBasePackage/` フォルダは、このパッケージを実際に Unity Editor で開いてコンパイル確認・動作確認するための最小構成プロジェクト。`Packages/manifest.json` でリポジトリ直下の `package.json` をローカルパッケージとして参照しているため、`Runtime/` や `Editor/` の変更は Editor 再読み込みで即座に反映される。他プロジェクトへ配布する際はこのテストプロジェクトごと持っていく必要はなく、リポジトリ直下(`package.json` のある階層)を UPM パッケージとして参照すればよい。
+
 ## 提供コンポーネント
 
 ### AR
@@ -57,7 +72,7 @@ XREAL (Nreal) 向け AR プロジェクトの共通基盤 UPM パッケージ。
 - `com.unity.xr.interaction.toolkit`
 - `com.unity.xr.hands`
 - `com.unity.inputsystem`
-- `com.unity.modules.ugui` (TextMeshPro)
+- `com.unity.ugui` (TextMeshPro)
 
 Unity 6000.0 (Unity 6) 以降を想定。
 

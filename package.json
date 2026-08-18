@@ -18,6 +18,6 @@
     "com.unity.xr.interaction.toolkit": "3.3.2",
     "com.unity.xr.hands": "1.7.3",
     "com.unity.inputsystem": "1.15.0",
-    "com.unity.modules.ugui": "1.0.0"
+    "com.unity.ugui": "2.0.0"
   }
 }
