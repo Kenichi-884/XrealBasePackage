@@ -1,0 +1,23 @@
+{
+  "name": "com.xreal.basepackage",
+  "version": "0.1.0",
+  "displayName": "Xreal Base Package",
+  "description": "XREAL (Nreal) 向け AR プロジェクト共通基盤。マーカーイベント中継、シーン進行管理、オーディオ管理、Dissolve/展開エフェクト、掌ウィンドウ召喚・ピンチジェスチャー、実機デバッグHUDを提供する。",
+  "unity": "6000.0",
+  "keywords": [
+    "xreal",
+    "nreal",
+    "ar",
+    "xr"
+  ],
+  "author": {
+    "name": "Kenichi-884"
+  },
+  "dependencies": {
+    "com.unity.xr.arfoundation": "6.3.5",
+    "com.unity.xr.interaction.toolkit": "3.3.2",
+    "com.unity.xr.hands": "1.7.3",
+    "com.unity.inputsystem": "1.15.0",
+    "com.unity.modules.ugui": "1.0.0"
+  }
+}
