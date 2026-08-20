@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.XR.Hands;
 using XrealBase.Interaction;
 
-namespace XrealBase.Debug
+namespace XrealBase.Diagnostics
 {
     /// <summary>
     /// Device debug HUD: displays hand tracking state, palm direction, pinch distance,
